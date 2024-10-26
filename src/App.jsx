@@ -9,9 +9,9 @@ import { useTranslation } from "react-i18next";
 
 function App() {
   const { t, i18n } = useTranslation(); // Use the translation function
-   useEffect(()=>{
-    s
-   },[])
+  const handleChange = (event) => {
+    i18n.changeLanguage(event.target.value); 
+};
   return (
     <div className="w-[1440px] h-[1260px] mx-auto">
       <header className="flex justify-between items-center p-5 px-32 ">
@@ -40,6 +40,10 @@ function App() {
                 {t("header4")}
               </a>
             </li>
+            <select id="language-select"  onChange={handleChange}>
+                <option  value="en">Inglizcha</option>
+                <option value="uz">O'zbekcha</option>
+            </select>
           </ul>
         </nav>
         <button className="bg-blue-500 text-white px-4 py-2 rounded">
